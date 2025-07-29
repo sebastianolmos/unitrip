@@ -18,10 +18,30 @@ Module for specifying the Unitrip format and tools for its processing and conver
 ---
 ## Use Case: Visualization in flowmap.blue using h3 spatial index system for trip aggregation
 
+
+All notebooks do a similar work, differing in how they load the data and the selection of columns. In short, they load the data from each dataset, then using the Unitrip module methods, convert the trip data (from adastrap, foursquare or eod format) to Unitrip format. Then it converts the trips into flows (Uniflow format) defining a lower h3 resolution for the aggregation of trips into flows. Finally the uniflow data is converted to the one that uses flowmap.blue as input.
+
+The way to use the module can be seen in the noebooks:
+- `notebooks/foursquare_to_flowmap.ipynb`: In the case of using Foursquare data.
+- `notebooks/eod_to_flowmap.ipynb`: In the case of using EOD data.
+- `notebooks/adatrap_to_flowmap.ipynb`: In the case of using public transportation trips infered with Adatrap.
+
+The generated visualizations are displayed bellow:
+
 Flows between cells of the Santiago Metropolitan Area according to FourSquare Check-ins. The H3 resolution is 7 and flows have a minimum of 8 trips. [Here you can see the visualization](https://www.flowmap.blue/1zVGC9qTSprneh_D6vDat_POg-_jfy28EAm4EMpiO4nE)
 ![](media/santiago_foursquare_flowmap.png)
 
-Flows between cells of the Santiago Metropolitan Area according EOD trips. . The H3 resolution is 7 and flows have a minimum of 8 trips. [Here you can see the visualization](https://www.flowmap.blue/1oTll7OJe8yTegiUeLZgQ-lZR6fTmrEIu5OF52C_1IKk)
+Flows between cells of the Santiago Metropolitan Area according EOD trips. The H3 resolution is 7 and flows have a minimum of 8 trips. [Here you can see the visualization](https://www.flowmap.blue/1oTll7OJe8yTegiUeLZgQ-lZR6fTmrEIu5OF52C_1IKk)
 ![](media/santiago_eod_flowmap.png)
 
-TO DO: Adatrap trips data
+Flows between cells of the Santiago Metropolitan Area according public transportation trips infered with Adatrap. The H3 resolution is 8 and flows have a minimum of 10 trips. [Here you can see the visualization](https://www.flowmap.blue/1FYctUexmJY863rKdKh1EIXdcGeKrpJKMmLGbO8Mo9Ho)
+![](media/santiago_adatrap_flowmap.png)
+
+
+-- 
+## Module methods
+(TODO)
+
+---
+## Datasets
+(TODO)
