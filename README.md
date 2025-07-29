@@ -8,11 +8,22 @@ Module for specifying the Unitrip format and tools for its processing and conver
 | 1 | 230 | -70.578518 | -33.402201 | -70.59798 | -33.517874 | 8cb2c556db34dff | 8cb2c50939a2dff | Fri Apr 20 14:49:25 2012 | Fri Aug 10 15:04:41 2012 | ... |
 | 2 | 801 | -70.650669 | -33.441378 | -70.573737 | -33.405494 | 8cb2c55413335ff | 8cb2c556db489ff | Mon May 07 19:11:55 2012 | Mon May 13 12:10:38 2013 | ... |
 
-### And the format for the flows (aggregating the trips using h3 cells) proposed is
+### And the format for the flows (aggregating the trips using h3 cells) proposed is:
 | flow_id | o_h3_cell | d_h3_cell | count |
 |:---:|:---:|:---:|:---:|
 | 1 | 87b2c5080ffffff | 87b2c5081ffffff | 9 |
 | 2 | 87b2c5082ffffff | 87b2c5090ffffff | 184 |
+
+Where:
+- `o_lon` and `o_lat` are origin longitude and origin latitude coordinates
+- `d_lon` and `d_lat` are destination longitude and destination latitude coordinates
+- `o_h3_cell` is the origin cell of the [H3](https://h3geo.org/) Uber’s Hexagonal Hierarchical Spatial Index. Which is a a hexagonal region that divides the Earth's surface into a grid system
+- `d_h3_cell` is the destination  H3 cell
+- `o_time` is the datetime of the origin
+- `d_time` is the datetime of the destination
+- `properties`other possible properties that a trip may have (mode, user's age, occupation, education) or the origin-destination location (municipality, type of location, category of point of interest).
+- `count` is the amount of accumulated trips
+
 
 
 ---
